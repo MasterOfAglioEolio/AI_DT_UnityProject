@@ -34,6 +34,8 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 - ROS 2
 
 ## 강화 학습 구현
+- Python3
+
 ### 기술 세부
 - tensorflow
 - keras
@@ -62,6 +64,11 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 
 - maskppo_predict.py(binpacking_poscopredict-v00)를 돌린다.
 
+# 강화학습
+![그림1](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/dec135e8-2c8f-4ff0-96a0-fef7e8849c2e)
+## Customize-Enviroment
+![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/7aeb9004-35af-4de5-ae84-14e4dde2c3c4)
+
 
 # 로봇팔 Pick And Place 
 ## Process
@@ -70,4 +77,9 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 
 ## Enviroment
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/db15ad83-7448-4c05-b341-d55c09fbb5b8)
+
+
+## Pick And Place 고도화
+![기존모델](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/250e9c92-2ac2-4172-abd6-8d94cad5ec12)|![수정모델](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/86f9e22c-1cf8-44c3-9ca5-506607d7afec)
+|------|---|
 
