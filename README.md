@@ -65,12 +65,28 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 - maskppo_predict.py(binpacking_poscopredict-v00)를 돌린다.
 
 # 강화학습
-![그림1](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/dec135e8-2c8f-4ff0-96a0-fef7e8849c2e)
 ## Customize-Enviroment
+Curriculum learning 은 인간이 학습하는 프로세스를 모방하여, 쉬운 난이도의 데이터를 먼저
+학습하고 점차 어려운 데이터를 학습하는 학습전략을 채택하여 모델의 학습 수렴 속도와
+성능에서 성과를 보이는 학습 전략을 말한다.</br>
+본 프로젝트는 큰 action space 와 직사각형 규격의 박스를 적재한다는 상황의 복잡성과 더불어
+매우 높은 성능의 모델을 만드는 것을 목표로 하였다. 때문에 curriculum learning 을 통해 쉬운
+단계의 모델을 학습하는 것으로 시작하여, 해당 모델을 순차적으로 상속받아 최종적으로
+복잡하고 무거운 모델의 성능을 최대화하였다.
+
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/7aeb9004-35af-4de5-ae84-14e4dde2c3c4)
 
+최종적으로는 curriculum v0 으로 진행한다. 정사각형 박스를 순서에 맞게 받아와 훈련에 사용하였다. pallete의 사이즈는 10x10
+으로 구성되어있다. threshold(에피소드 종료 기준값)는 0.8로 설정하였다.
+
+## 강화학습 동작
+![new_boxsequence](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347)
+
+강화학습 모델 학습 결과로 박스의 Action, 즉 그리드 위치와 박스의 크기를 담은 Json 파일이 작성되며,
+이 데이터를 Unity 에서 읽어들여 시각적으로 bin packing 이 구현될 수 있게 하였다.
 
 # 로봇팔 Pick And Place 
+
 ## Process
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/402807b6-648a-43e6-aa59-1cdae1212e42)
 
@@ -78,8 +94,28 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 ## Enviroment
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/db15ad83-7448-4c05-b341-d55c09fbb5b8)
 
+1. 고정위치의 로봇 팔에 택배 상자를 공급하기 위한 컨베이어 벨트를 구현하기 위해, ‘Remake-BeltConveyor-System’영상을 참고해 직접 제작하였다. 물품이 컨베이어 벨트 끝단에서 생성되며,
+컨베이어 벨트 1 칸에는 물품 1 개가 배치되도록 일정한 간격으로 물품이 이동하도록 구현했다.
+특히, 로봇 팔이 컨베이어 벨트 위 물품을 잡기 위해서는 정해진 위치에서 물품이 정지되어야 한다.
+하지만 해당 영상에서 소개하는 컨베이어 벨트는 정지 기능이 없다. 그래서 물품이 picking
+지점까지 이동시킨 후 picking 될 때까지 정지하는 기능을 Raycast 함수를 통해 물체를 인식하도록
+함으로써 구현하였다. 
+
+2. 팔레트는 Pick and Place 과정에서 물품이 적재될 공간이자 좌표의 역할을 한다.
+팔레트의 모델링은 유니티 Asset store 에서 Asset 을 다운받아 사용했다. 강화학습의 결과로
+전달되는 10*10 그리드 좌표를 기준으로 접근하기 위해 팔레트의 월드 좌표를 기준으로 좌표에
+접근하기 위해 박스의 크기와 그리드의 크기를 고려하여 월드 좌표를 계산하여 변환된 그리드
+좌표에 맞추어 Target Box 를 적재한다.
+
+3. 상자는 Pick and Place 에서 Target 의 역할을 수행한다. 박스 형의 object 를 생성 후, box material
+texturer 을 씌어 생성했다. 박스 종류는 3 가지이며 우체국의 박스 1~3 호 규격을 참고함으로써
+각각 10x10, 20x20, 33x30 이다.
 
 ## Pick And Place 고도화
-![기존모델](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/250e9c92-2ac2-4172-abd6-8d94cad5ec12)|![수정모델](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/86f9e22c-1cf8-44c3-9ca5-506607d7afec)
-|------|---|
+![기존모델](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/f4a7f570-7896-4173-b39e-30a36d9e35bf)|![ezgif com-gif-maker](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/56c2d5aa-5d42-4e8c-94e0-b12de7bb36a9)
+|---|---|
+|기존 모델(1 Pick 1 Place)|고도화 모델(N Pick N Plce)|
+
+
+## 
 
