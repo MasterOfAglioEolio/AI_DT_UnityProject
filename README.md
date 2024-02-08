@@ -2,7 +2,7 @@
 
 Posco AI/BIGDATA ACADEMY AI PROJECT
 
-Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해 물류 최적화를 구현하는 프로젝트입니다. 
+Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해 물류 최적화를 구현하는 프로젝트입니다. </br>
 
 
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/b75646a6-addf-4af9-b7c8-9e4ae0544200)
