@@ -89,7 +89,10 @@ Curriculum learning 은 인간이 학습하는 프로세스를 모방하여, 쉬
 이 데이터를 Unity 에서 읽어들여 시각적으로 bin packing 이 구현될 수 있게 하였다.
 
 # 로봇팔 Pick And Place 
-
+## Pick And Place 고도화
+![기존모델](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/f4a7f570-7896-4173-b39e-30a36d9e35bf)|![ezgif com-gif-maker](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/56c2d5aa-5d42-4e8c-94e0-b12de7bb36a9)
+|---|---|
+|기존 모델(1 Pick 1 Place)|고도화 모델(N Pick N Plce)|
 ## Process
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/402807b6-648a-43e6-aa59-1cdae1212e42)
 
@@ -128,10 +131,12 @@ Curriculum learning 은 인간이 학습하는 프로세스를 모방하여, 쉬
 texturer 을 씌어 생성했다. 박스 종류는 3 가지이며 우체국의 박스 1~3 호 규격을 참고함으로써
 각각 10x10, 20x20, 33x30 이다.
 
-## Pick And Place 고도화
-![기존모델](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/f4a7f570-7896-4173-b39e-30a36d9e35bf)|![ezgif com-gif-maker](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/56c2d5aa-5d42-4e8c-94e0-b12de7bb36a9)
+## 최종 동작
+![new_boxsequence](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347)|![binpacking](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/673c5a41-b754-4e68-9017-71018be248a4)
 |---|---|
-|기존 모델(1 Pick 1 Place)|고도화 모델(N Pick N Plce)|
+|강화 학습 결과로 그리드 위치, Box Size Json 파일 생성|Json 파일 기반으로 Box Bin Packing| 
+
+
 
 
 ## 
