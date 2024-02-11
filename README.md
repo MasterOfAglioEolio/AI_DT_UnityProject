@@ -102,11 +102,22 @@ Curriculum learning 은 인간이 학습하는 프로세스를 모방하여, 쉬
 
 # 로봇팔 Pick And Place 
 ## Pick And Place 고도화
-![기존모델](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/f4a7f570-7896-4173-b39e-30a36d9e35bf)|![ezgif com-gif-maker](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/56c2d5aa-5d42-4e8c-94e0-b12de7bb36a9)
-|---|---|
-|기존 모델(1 Pick 1 Place)|고도화 모델(N Pick N Plce)|
-## Process
-![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/402807b6-648a-43e6-aa59-1cdae1212e42)
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/f4a7f570-7896-4173-b39e-30a36d9e35bf" width=450 alt="기존모델">
+    </td>
+    <td align="center">
+      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/56c2d5aa-5d42-4e8c-94e0-b12de7bb36a9" width=450 alt="ezgif com-gif-maker">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">기존 모델 (1 Pick 1 Place)</td>
+    <td align="center">고도화 모델 (N Pick N Place)</td>
+  </tr>
+</table>
+
 
 
 ## Enviroment
