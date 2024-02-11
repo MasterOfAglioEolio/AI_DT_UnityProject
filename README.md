@@ -155,9 +155,20 @@ texturer 을 씌어 생성했다. 박스 종류는 3 가지이며 우체국의 �
 각각 10x10, 20x20, 33x30 이다.
 
 ## 최종 동작
-![new_boxsequence](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347)|![binpacking](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/673c5a41-b754-4e68-9017-71018be248a4)
-|---|---|
-|강화 학습 결과로 그리드 위치, Box Size Json 파일 생성|Json 파일 기반으로 Box Bin Packing| 
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347" width="450" alt="new_boxsequence">
+    </td>
+    <td align="center">
+      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/673c5a41-b754-4e68-9017-71018be248a4" width="450" alt="binpacking">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">강화 학습 결과로 그리드 위치, Box Size Json 파일 생성</td>
+    <td align="center">Json 파일 기반으로 Box Bin Packing</td>
+  </tr>
+</table>
 
 
 
