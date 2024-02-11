@@ -8,7 +8,6 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/b75646a6-addf-4af9-b7c8-9e4ae0544200)
 
 
-> [시연 영상 링크](https://youtu.be/sm0xbptX7lU)
 
 # 프로젝트 목표
 
@@ -199,6 +198,10 @@ texturer 을 씌어 생성했다. 박스 종류는 3 가지이며 우체국의 �
 각각 10x10, 20x20, 33x30 이다.
 
 ## 최종 동작
+
+> [시연 영상 링크](https://youtu.be/sm0xbptX7lU)
+- 강화학습을 통해 나온 결과를 바탕으로 Unity 환경에서 물류 적재 최적화 시뮬레이션을 수행합니다.
+
 <table>
   <tr>
     <td align="center">
