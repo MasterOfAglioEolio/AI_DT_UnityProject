@@ -2,17 +2,18 @@
 
 Posco AI/BIGDATA ACADEMY AI PROJECT
 
-Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해 물류 최적화를 구현하는 프로젝트입니다. </br>
-
+이 프로젝트는 Unity 기반의 가상 물류 창고에서 강화학습을 통해 물류 최적화를 구현하는 것을 목표로 합니다. </br>
+디지털 트윈을 활용하여 가상 물류 창고를 구축하고, 강화학습 알고리즘을 적용하여 물류 작업의 최적화를 달성합니다. </br>
 
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/b75646a6-addf-4af9-b7c8-9e4ae0544200)
+
 
 
 # 프로젝트 목표
 
 
 프로젝트의 주요 목표는 강화학습과 디지털 트윈을 통해 가상 물류창고에서의 물류최적화를 구현하는 것입니다.
-먼저, 프로젝트 추진 방향은 아래와 같습니다다.
+먼저, 프로젝트 추진 방향은 아래와 같습니다.
 
 1) 공간효율 극대화 상자 배치
 : 강화학습을 통해 상자 면적을 고려해 팔레트 위 적재 방법을 도출한다.
@@ -59,7 +60,7 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 - [해당 링크 참고](https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/pick_and_place/README.md)
 
 ### Unity Project 실행
-- 위 링크를 통해 URDF 및 Docker 실행 완료 후 0413scene3.unity 실행 ! 
+- 위 링크를 통해 URDF 및 Docker 실행 완료 후 AI_DT_Project.unity 실행 ! 
 
 ## 강화학습
 
@@ -197,13 +198,17 @@ texturer 을 씌어 생성했다. 박스 종류는 3 가지이며 우체국의 �
 각각 10x10, 20x20, 33x30 이다.
 
 ## 최종 동작
+
+> [시연 영상 링크](https://youtu.be/BqrYe2p-a2w)
+- 강화학습을 통해 나온 결과를 바탕으로 Unity 환경에서 물류 적재 최적화 시뮬레이션을 수행합니다.
+
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347" width="450" alt="new_boxsequence">
+      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347" width="400" alt="new_boxsequence">
     </td>
     <td align="center">
-      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/673c5a41-b754-4e68-9017-71018be248a4" width="450" alt="binpacking">
+      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/673c5a41-b754-4e68-9017-71018be248a4" width="400" alt="binpacking">
     </td>
   </tr>
   <tr>
