@@ -205,10 +205,10 @@ texturer 을 씌어 생성했다. 박스 종류는 3 가지이며 우체국의 �
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347" width="450" alt="new_boxsequence">
+      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347" width="400" alt="new_boxsequence">
     </td>
     <td align="center">
-      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/673c5a41-b754-4e68-9017-71018be248a4" width="450" alt="binpacking">
+      <img src="https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/673c5a41-b754-4e68-9017-71018be248a4" width="400" alt="binpacking">
     </td>
   </tr>
   <tr>
