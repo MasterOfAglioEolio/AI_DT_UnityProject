@@ -8,6 +8,8 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/b75646a6-addf-4af9-b7c8-9e4ae0544200)
 
 
+> [시연 영상 링크](https://youtu.be/sm0xbptX7lU)
+
 # 프로젝트 목표
 
 
@@ -59,7 +61,7 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 - [해당 링크 참고](https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/pick_and_place/README.md)
 
 ### Unity Project 실행
-- 위 링크를 통해 URDF 및 Docker 실행 완료 후 0413scene3.unity 실행 ! 
+- 위 링크를 통해 URDF 및 Docker 실행 완료 후 AI_DT_Project.unity 실행 ! 
 
 ## 강화학습
 
