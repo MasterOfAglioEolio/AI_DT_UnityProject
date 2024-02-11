@@ -38,6 +38,7 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 
 ### Asset
 - (Factory Interior + Factory Props Vol 1 - BUNDLE ($69.99))[https://assetstore.unity.com/packages/3d/props/factory-interior-factory-props-vol-1-bundle-229757]
+(저작권 문제로 해당 repository에는 commit하지 않았습니다.)
 
 ## 강화 학습 구현
 - Python3
