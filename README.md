@@ -59,7 +59,7 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 - [해당 링크 참고](https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/pick_and_place/README.md)
 
 ### Unity Project 실행
-> 위 링크를 통해 URDF 및 Docker 실행 완료 후 0413scene3.unity 실행 ! 
+- 위 링크를 통해 URDF 및 Docker 실행 완료 후 0413scene3.unity 실행 ! 
 
 ## 강화학습
 
