@@ -29,14 +29,15 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 # 개발 환경
 
 <h5> 해당 프로젝트는 "Unity-Robotics-Hub"를 참고하여 개발했습니다.</h5>
-- [Unity Robotics Hub](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
+
+> [Unity-Robotics-Hub](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
 
 ## Pick and Place 구현 
 - Unity Community(C#)
 - ROS 2
 
 ### Asset
-- (Factory Interior + Factory Props Vol 1 - BUNDLE ($69.99)[https://assetstore.unity.com/packages/3d/props/factory-interior-factory-props-vol-1-bundle-229757]
+- [Factory Interior + Factory Props Vol 1 - BUNDLE ($69.99)](https://assetstore.unity.com/packages/3d/props/factory-interior-factory-props-vol-1-bundle-229757)
 
 (저작권 문제로 해당 repository에는 commit하지 않았습니다.)
 
@@ -120,7 +121,47 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 이 데이터를 Unity 에서 읽어들여 시각적으로 bin packing 이 구현될 수 있게 하였다.
 
 # 로봇팔 Pick And Place 
-## Pick And Place 고도화
+
+## Pick And Place 프로세스
+
+1) Target Box 은 Conveyor belt 를 따라 picking 지점까지 이동
+2) Robotic arm 이 이동된 Target Box 을 인식
+3) Robotic arm 은 인식된 Target Box 의 좌표를 토대로 picking
+4) Robotic arm 은 picking 한 Target Box 을 destination 까지 이동
+5) 적재할 destination 에 도착했을 때 Robotic arm 은 Target Box 을 placing
+위 과정을 반복하며 각각의 Box 들을 팔레트 위 특정 좌표에 적재 시키며 빈 공간 최소화
+
+
+## Enviroment
+![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/db15ad83-7448-4c05-b341-d55c09fbb5b8)
+
+---
+
+### 1.(컨베이어 벨트) 
+- 고정위치의 로봇 팔에 택배 상자를 공급하기 위한 컨베이어 벨트를 구현하기 위해,[Remake-BeltConveyor-System](https://www.youtube.com/watch?time_continue=969&v=Zev8-i6uX_U&embeds_referring_euri=https%3A%2F%2Fwww.notion.so%2F&source_ve_path=MjM4NTE&feature=emb_title) 영상을 참고해 직접 제작하였다. 물품이 컨베이어 벨트 끝단에서 생성되며,
+컨베이어 벨트 1 칸에는 물품 1 개가 배치되도록 일정한 간격으로 물품이 이동하도록 구현했다.
+특히, 로봇 팔이 컨베이어 벨트 위 물품을 잡기 위해서는 정해진 위치에서 물품이 정지되어야 한다.
+하지만 해당 영상에서 소개하는 컨베이어 벨트는 정지 기능이 없다. 그래서 물품이 picking
+지점까지 이동시킨 후 picking 될 때까지 정지하는 기능을 Raycast 기능을 통해 물체를 인식하도록
+함으로써 구현하였다.
+
+![컨베이어](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/35e74497-f62f-469c-bab2-1944218360b0)
+
+---
+
+### 2.(로봇팔) 
+- 이번 프로젝트에서 사용할 로봇 팔은 “Niryo”사의 “Niryo One”을 사용하였고, 6 자유도를 가지고 있다. 해당 로봇
+팔을 채택한 이유는 교육용으로 제작되어, 가상환경에서 로봇 팔을 구현 시켜주는 URDF 파일이
+배포되어 있다는 점이다.
+[링크](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
+위 주소는 로봇 팔의 Pick and Place 를 구현하기 위해서 활용한 자료이다. 해당 자료는 unity
+환경에서 ROS 와 연동하여 로봇 팔을 제어하는 방법을 소개하는 튜토리얼로, 실제 로봇 팔에서
+최종적으로 Pick and Place 를 구현하는 것까지 소개한다. 하지만, 해당 튜토리얼은 한 물체와 한
+목적지(즉, 1 pick 1 place) 에 대한 실행 방법을 알려준다는 점에서 우리가 추구하는 방식과 달랐다.
+그래서 우리는 프로젝트에 맞게 기존 튜토리얼의 1 pick 1 place 방식에서 N pick N place 로
+수정하였다.
+
+### Pick And Place 고도화
 
 <table>
   <tr>
@@ -137,36 +178,19 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
   </tr>
 </table>
 
+---
 
-## Enviroment
-![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/db15ad83-7448-4c05-b341-d55c09fbb5b8)
-
-1.(컨베이어 벨트) 
-- 고정위치의 로봇 팔에 택배 상자를 공급하기 위한 컨베이어 벨트를 구현하기 위해, ‘Remake-BeltConveyor-System’영상을 참고해 직접 제작하였다. 물품이 컨베이어 벨트 끝단에서 생성되며,
-컨베이어 벨트 1 칸에는 물품 1 개가 배치되도록 일정한 간격으로 물품이 이동하도록 구현했다.
-특히, 로봇 팔이 컨베이어 벨트 위 물품을 잡기 위해서는 정해진 위치에서 물품이 정지되어야 한다.
-하지만 해당 영상에서 소개하는 컨베이어 벨트는 정지 기능이 없다. 그래서 물품이 picking
-지점까지 이동시킨 후 picking 될 때까지 정지하는 기능을 Raycast 함수를 통해 물체를 인식하도록
-함으로써 구현하였다. 
-
-2.(로봇팔) 
-- 이번 프로젝트에서 사용할 로봇 팔은 “Niryo”사의 “Niryo One”을 사용하였고, 6 자유도를 가지고 있다. 해당 로봇
-팔을 채택한 이유는 교육용으로 제작되어, 가상환경에서 로봇 팔을 구현 시켜주는 URDF 파일이
-배포되어 있다는 점이다.
-[링크](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
-위 주소는 로봇 팔의 Pick and Place 를 구현하기 위해서 활용한 자료이다. 해당 자료는 unity
-환경에서 ROS 와 연동하여 로봇 팔을 제어하는 방법을 소개하는 튜토리얼로, 실제 로봇 팔에서
-최종적으로 Pick and Place 를 구현하는 것까지 소개한다. 하지만, 해당 튜토리얼은 한 물체와 한
-목적지(즉, 1 pick 1 place) 에 대한 실행 방법을 알려준다는 점에서 우리가 추구하는 방식과 달랐다.
-그래서 우리는 프로젝트에 맞게 기존 튜토리얼의 1 pick 1 place 방식에서 N pick N place 로
-수정하였다.
-
-3.(팔레트&박스) 
+### 3.(팔레트&박스) 
 - 팔레트는 Pick and Place 과정에서 물품이 적재될 공간이자 좌표의 역할을 한다.
 팔레트의 모델링은 유니티 Asset store 에서 Asset 을 다운받아 사용했다. 강화학습의 결과로
 전달되는 10*10 그리드 좌표를 기준으로 접근하기 위해 팔레트의 월드 좌표를 기준으로 좌표에
 접근하기 위해 박스의 크기와 그리드의 크기를 고려하여 월드 좌표를 계산하여 변환된 그리드
 좌표에 맞추어 Target Box 를 적재한다.
+
+#### 그리드 좌표 > Unity 월드 좌표 변환 후 Box 배치
+  
+![KakaoTalk_20240211_182655021](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/cd03ba06-7814-422d-83aa-44a76c3685a9)
+
 
 - 상자는 Pick and Place 에서 Target 의 역할을 수행한다. 박스 형의 object 를 생성 후, box material
 texturer 을 씌어 생성했다. 박스 종류는 3 가지이며 우체국의 박스 1~3 호 규격을 참고함으로써
