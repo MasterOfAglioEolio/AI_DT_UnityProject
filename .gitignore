@@ -153,3 +153,5 @@ crashlytics-build.properties
 *.CopyComplete
 *.pref
 *.pref
+*.html
+*.cpp

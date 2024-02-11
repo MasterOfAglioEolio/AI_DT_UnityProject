@@ -6,6 +6,8 @@
 * text=auto
 # Code
 *.cs text diff=csharp
+*.html
+*.cpp
 # Unity Text Assets
 *.meta unityyaml
 *.unity filter=lfs diff=lfs merge=lfs -text
