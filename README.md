@@ -8,12 +8,11 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/b75646a6-addf-4af9-b7c8-9e4ae0544200)
 
 
-
 # 프로젝트 목표
 
 
 프로젝트의 주요 목표는 강화학습과 디지털 트윈을 통해 가상 물류창고에서의 물류최적화를 구현하는 것입니다.
-먼저, 프로젝트 추진 방향은 아래와 같다.
+먼저, 프로젝트 추진 방향은 아래와 같습니다다.
 
 1) 공간효율 극대화 상자 배치
 : 강화학습을 통해 상자 면적을 고려해 팔레트 위 적재 방법을 도출한다.
@@ -81,7 +80,8 @@ Unity기반 디지털 트윈과 강화학습으로 가상물류 창고를 통해
 
 # 강화학습
 ## Customize-Enviroment
-Curriculum learning 은 인간이 학습하는 프로세스를 모방하여, 쉬운 난이도의 데이터를 먼저
+
+> Curriculum learning 은 인간이 학습하는 프로세스를 모방하여, 쉬운 난이도의 데이터를 먼저
 학습하고 점차 어려운 데이터를 학습하는 학습전략을 채택하여 모델의 학습 수렴 속도와
 성능에서 성과를 보이는 학습 전략을 말한다.</br>
 본 프로젝트는 큰 action space 와 직사각형 규격의 박스를 적재한다는 상황의 복잡성과 더불어
@@ -91,8 +91,26 @@ Curriculum learning 은 인간이 학습하는 프로세스를 모방하여, 쉬
 
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/7aeb9004-35af-4de5-ae84-14e4dde2c3c4)
 
-최종적으로는 curriculum v0 으로 진행한다. 정사각형 박스를 순서에 맞게 받아와 훈련에 사용하였다. pallete의 사이즈는 10x10
-으로 구성되어있다. threshold(에피소드 종료 기준값)는 0.8로 설정하였다.
+## 알고리즘 비교
+![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/365afc12-5696-4fe1-acfe-637520853087)
+
+
+![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/1b70a3a7-9ccb-4877-a356-ad5fa394fe2c)
+
+> 본 프로젝트에서는 크게 4 단계로 알고리즘을 비교하였다. 이는 더 복잡한 문제를 풀기에 적절한 알고리즘을 채택하기 위함이다.
+그 중, 가장 두드러지는 차이를 보낸 모델은 기본 PPO 모델과 Mask PPO 모델, 그리고 Mask PPO 모델의
+모델 성능 차이였으며, 획기적인 학습시간 단축을 가능하게 한 Multi Processing 을 적용한 MaskPPO
+모델이었다.
+이들의 성능 차이를 모델의 tensorboard 출력 결과 지표를 통해 비교하였다.
+
+![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a24462fa-9ca5-4273-8b37-be4d1e90a55f)
+
+> tensorboard를 통해 위와 같이 모델 훈련 결과를 확인할 수 있다. 중점적으로 보아야할 지표로는 loss값
+과 variance가 있다. loss 값들은 0에 가까워 질수록 좋고, variance는 설명력으로 1에 가까울수록 좋은 지
+표이다. 또한 len의 경우 한 에피소드의 길이고, reward의 경우 보상받은 점수를 의미한다. 에피소드의 길
+이가 짧아지고 보상받은 점수가 증가할수록 훈련이 잘 되고 있다는 것을 알 수 있다.
+
+
 
 ## 강화학습 동작
 ![new_boxsequence](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/a76b1e49-677a-4d34-8d07-3739fb32b347)
@@ -117,7 +135,6 @@ Curriculum learning 은 인간이 학습하는 프로세스를 모방하여, 쉬
     <td align="center">고도화 모델 (N Pick N Place)</td>
   </tr>
 </table>
-
 
 
 ## Enviroment
@@ -171,7 +188,12 @@ texturer 을 씌어 생성했다. 박스 종류는 3 가지이며 우체국의 �
 </table>
 
 
+## 개선 방향
+1. ML-Agent를 활용한 동작 학습: 현재는 Python 과 Unity 간 좌표 제공 방식을 사용하여 강화학습을 구현하고 있다. 하지만 유니티 내 ML-Agent를 활용하여 로봇팔이 실제 동작을 학습할 수 있도록 구현하는 방식으로 개선 가능하다.
+   
+2. 실제 기업 데이터 적용: 아쉽게도 우리는 실제 기업 데이터를 구하지 못하여 최적화 프로그램에 적용시켜 보지 못했다. 하지만 기업 데이터를 활용하여 우리가 구현한 최적화 프로그램의 성능을 평가하고 개선할 수 있다면 더 좋은 결과를 얻을 수 있을 것이다.
+   
+3. 실시간 개체 인식 기반 적재 방식: 향후 개선 방향으로는 시나리오 방식의 bin packing이 아닌, 실시간으로 인식된 개체를 기반으로 최적의 적재 위치를 도출하는 방식으로 개선할 수 있다. 이를 통해 더 효율적인 적재가 가능하게 될 것이다.
 
 
-## 
 
