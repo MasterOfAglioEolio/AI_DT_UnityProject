@@ -7,7 +7,8 @@ Posco AI/BIGDATA ACADEMY AI PROJECT
 
 ![image](https://github.com/XgitalBounce/AI_DT_UnityProject/assets/60294084/b75646a6-addf-4af9-b7c8-9e4ae0544200)
 
-
+# 개발 기간
+2023.03.20 ~ 2023.4.18 (1개월)
 
 # 프로젝트 목표
 
