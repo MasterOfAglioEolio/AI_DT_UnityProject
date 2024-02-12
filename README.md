@@ -34,7 +34,7 @@ Posco AI/BIGDATA ACADEMY AI PROJECT
 
 > [Unity-Robotics-Hub](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
 
-## Pick and Place 구현 
+## 가상 물류 환경 구현 / Pick and Place 구현 
 - Unity Community(C#)
 - ROS 2
 
